@@ -1,0 +1,22 @@
+{
+  "name": "0x00-ES6_basic",
+  "version": "1.0.0",
+  "description": "At the end of this project, you are expected to be able to explain to anyone, without the help of Google:",
+  "main": "0-constants.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "dev": "node"
+  },
+  "keywords": [],
+  "author": "OrinaBravin",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "babel-jest": "^26.6.3",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "eslint": "^7.16.0"
+  }
+}
