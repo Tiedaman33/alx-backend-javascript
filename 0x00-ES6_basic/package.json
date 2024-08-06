@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "lint": "eslint .",
+    "lint": "eslint . --fix",
     "dev": "node"
   },
   "keywords": [],
