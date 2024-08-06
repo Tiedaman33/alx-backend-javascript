@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "At the end of this project, you are expected to be able to explain to anyone, without the help of Google:",
   "main": "0-constants.js",
+  "type": "module",
   "scripts": {
     "test": "jest",
     "lint": "eslint .",
