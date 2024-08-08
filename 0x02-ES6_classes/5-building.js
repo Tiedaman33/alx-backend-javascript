@@ -1,36 +1,28 @@
-/**
- * Abstract class representing a building.
- *
- * Attributes:
- * - sqft (Number): The square footage of the building.
- *
- * Methods:
- * - evacuationWarningMessage: Must be implemented by subclasses.
- */
-export default class Building {
+class Building {
   constructor(sqft) {
-    if (new.target === Building) {
-      throw new Error('Cannot instantiate abstract class Building directly');
+    if (this.constructor !== Building) {
+      if (typeof this.evacuationWarningMessage !== 'function') {
+        throw new Error(
+          'Class extending Building must override evacuationWarningMessage',
+        );
+      }
     }
     this.sqft = sqft;
+  }
+
+  /**
+   * @param {Number} sqft
+   */
+  set sqft(sqft) {
+    if (typeof sqft !== 'number') {
+      throw new TypeError('sqft nust be a number');
+    }
+    this._sqft = sqft;
   }
 
   get sqft() {
     return this._sqft;
   }
-
-  set sqft(value) {
-    if (typeof value !== 'number') {
-      throw new TypeError('Square footage must be a number');
-    }
-    this._sqft = value;
-  }
-
-  /**
-   * Method to be implemented by subclasses.
-   * @throws {Error} If not implemented by subclass.
-   */
-  static evacuationWarningMessage() {
-    return 'This is an abstract method and should be overridden by subclasses.';
-  }
 }
+
+export default Building;
