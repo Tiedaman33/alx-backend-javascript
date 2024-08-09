@@ -11,4 +11,3 @@ export default function createIteratorObject(report) {
   // Return an iterator from the generator function
   return employeeGenerator();
 }
-
