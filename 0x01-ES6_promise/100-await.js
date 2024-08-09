@@ -3,7 +3,8 @@ import { uploadPhoto, createUser } from './utils';
 /**
  * Handles uploading a photo and creating a user asynchronously.
  *
- * @returns {Promise<Object>} An object containing the photo and user data, or empty values in case of failure.
+ * @returns {Promise<Object>} An object containing 
+ * the photo and user data or empty values in case of failure.
  */
 export default async function asyncUploadUser() {
   const result = {
