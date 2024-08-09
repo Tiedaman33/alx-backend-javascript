@@ -2,7 +2,7 @@
  * Handles the response from a given Promise.
  *
  * @param {Promise} promise - The promise to handle.
- * @returns {Promise<Object|Error>} A promise 
+ * @returns {Promise<Object|Error>} A promise
  * that resolves with an object or rejects with an Error object.
  */
 export default function handleResponseFromAPI(promise) {
