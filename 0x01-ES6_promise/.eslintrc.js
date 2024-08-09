@@ -1,25 +1,35 @@
 module.exports = {
   env: {
-    browser: true,
+    browser: false,
     es6: true,
     jest: true,
   },
   extends: [
-    'eslint:recommended',
-    'plugin:react/recommended',
+    'airbnb-base',
+    'plugin:jest/all',
   ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: 2021,
+    ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: [
-    'react',
-  ],
+  plugins: ['jest'],
   rules: {
-    'react/react-in-jsx-scope': 'off',
+    'no-console': 'off',
+    'no-shadow': 'off',
+    'no-restricted-syntax': [
+      'error',
+      'LabeledStatement',
+      'WithStatement',
+    ],
   },
+  overrides:[
+    {
+      files: ['*.js'],
+      excludedFiles: 'babel.config.js',
+    }
+  ]
 };
-

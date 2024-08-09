@@ -11,14 +11,12 @@ import uploadPhoto from './5-photo-reject.js';
  * @returns {Promise<Array<Object>>} An array of objects with status and result of each promise.
  */
 export default function handleProfileSignup(firstName, lastName, fileName) {
-    const signUpPromise = signUpUser(firstName, lastName);
-    const uploadPhotoPromise = uploadPhoto(fileName);
+  const signUpPromise = signUpUser(firstName, lastName);
+  const uploadPhotoPromise = uploadPhoto(fileName);
 
-    return Promise.allSettled([signUpPromise, uploadPhotoPromise])
-        .then(results => {
-            return results.map(result => ({
-                status: result.status,
-                value: result.status === 'fulfilled' ? result.value : result.reason
-            }));
-        });
+  return Promise.allSettled([signUpPromise, uploadPhotoPromise])
+    .then((results) => results.map((result) => ({
+      status: result.status,
+      value: result.status === 'fulfilled' ? result.value : result.reason,
+    })));
 }

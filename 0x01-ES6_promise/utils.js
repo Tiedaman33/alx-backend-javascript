@@ -1,21 +1,13 @@
-// utils.js
-
-async function uploadPhoto() {
-  return {
+export function uploadPhoto() {
+  return Promise.resolve({
     status: 200,
-    body: 'photo-profile-1'
-  };
+    body: 'photo-profile-1',
+  });
 }
 
-async function createUser() {
-  return {
+export function createUser() {
+  return Promise.resolve({
     firstName: 'Guillaume',
-    lastName: 'Salva'
-  };
+    lastName: 'Salva',
+  });
 }
-
-module.exports = {
-  uploadPhoto,
-  createUser,
-};
-

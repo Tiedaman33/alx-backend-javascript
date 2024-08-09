@@ -5,16 +5,16 @@
  * @returns {Array} An array containing the result or error message, and a final message.
  */
 export default function guardrail(mathFunction) {
-    const queue = [];
-    
-    try {
-        const result = mathFunction();
-        queue.push(result);
-    } catch (error) {
-        queue.push(error.message);
-    }
-    
-    queue.push('Guardrail was processed');
-    
-    return queue;
+  const queue = [];
+
+  try {
+    const result = mathFunction();
+    queue.push(result);
+  } catch (error) {
+    queue.push(error.message);
+  }
+
+  queue.push('Guardrail was processed');
+
+  return queue;
 }
